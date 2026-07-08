@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Omar Nesredin Anwar Hagos — AI Engineer, Agentic Systems</title>
+<meta name="description" content="Omar Nesredin Anwar Hagos — AI engineer building agentic systems and deploying them to the cloud as endpoints or ready-to-use applications." />
+
+<link rel="icon" href="assets/gobz-logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <img src="assets/gobz-logo.png" alt="GOBZ" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="certs.html">Certifications</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+
+    <!-- ======================================================================
+         EDIT-ME SECTION
+         This block is meant to be hand-edited directly in this HTML file
+         whenever your name, offer, or description changes. Nothing here is
+         pulled from a database.
+         ====================================================================== -->
+    <div class="hero-copy">
+      <p class="eyebrow">AI Engineer / Agentic Systems</p>
+      <h1 class="hero-name">Omar Nesredin<br>Anwar Hagos</h1>
+      <p class="hero-offer">I design and ship AI agents — then deploy them.</p>
+      <p class="hero-desc">
+        I build agentic AI systems: LLM-driven agents that plan, call tools, and
+        get real work done. I take them from architecture through to
+        production — deployed to the cloud either as an API endpoint you can
+        integrate with, or as a complete, ready-to-use application with its
+        own interface.
+      </p>
+      <div class="hero-actions">
+        <a href="certs.html" class="btn btn-solid">View Certifications</a>
+        <a href="https://github.com/RealGobz" target="_blank" rel="noopener" class="btn btn-ghost">GitHub ↗</a>
+      </div>
+    </div>
+    <!-- ==================== END EDIT-ME SECTION ==================== -->
+
+    <div class="hero-graph" aria-hidden="true">
+      <svg class="node-graph" viewBox="0 0 480 440" xmlns="http://www.w3.org/2000/svg">
+        <!-- static edges -->
+        <path class="edge" d="M240,210 L90,90" />
+        <path class="edge" d="M240,210 L400,340" />
+        <!-- active / animated edges (data flowing through the agent graph) -->
+        <path class="edge edge-active" d="M240,210 L390,70" />
+        <path class="edge edge-active" d="M240,210 L70,330" />
+
+        <!-- satellite nodes -->
+        <circle class="node" cx="90" cy="90" r="7" />
+        <text x="90" y="72" text-anchor="middle" class="graph-label">TOOL</text>
+
+        <circle class="node" cx="390" cy="70" r="7" />
+        <text x="390" y="52" text-anchor="middle" class="graph-label">CLOUD</text>
+
+        <circle class="node" cx="70" cy="330" r="7" />
+        <text x="70" y="356" text-anchor="middle" class="graph-label">DATA</text>
+
+        <circle class="node" cx="400" cy="340" r="7" />
+        <text x="400" y="366" text-anchor="middle" class="graph-label">API</text>
+
+        <!-- core node -->
+        <circle class="node-pulse" cx="240" cy="210" r="4" />
+        <circle class="node-pulse pulse-2" cx="240" cy="210" r="4" />
+        <circle class="node-pulse pulse-3" cx="240" cy="210" r="4" />
+        <circle class="node" cx="240" cy="210" r="12" />
+        <circle class="node-core" cx="240" cy="210" r="4" />
+        <text x="240" y="240" text-anchor="middle" class="graph-label graph-label-core">AGENT</text>
+      </svg>
+    </div>
+
+  </div>
+</section>
+
+<section class="certs-teaser" id="certs">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Proof of Work</p>
+      <h2>Certifications &amp; credentials</h2>
+      <p>
+        Agentic AI, cloud, networking, cybersecurity, and coding credentials —
+        organized by track, each one linked back to the issuer so you can
+        verify it directly.
+      </p>
+    </div>
+    <a href="certs.html" class="btn btn-solid certs-teaser-cta">View Certifications →</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Omar Nesredin Anwar Hagos</span>
+    <span>GOBZ</span>
+  </div>
+</footer>
+
+<style>
+  .graph-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    fill: var(--text-faint);
+  }
+  .graph-label-core {
+    fill: var(--accent);
+    font-weight: 700;
+  }
+</style>
+
+</body>
+</html>

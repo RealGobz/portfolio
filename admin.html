@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Admin — GOBZ</title>
+
+<link rel="icon" href="assets/gobz-logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/certs.css" />
+<link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <img src="assets/gobz-logo.png" alt="GOBZ" /> Admin
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">View site ↗</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ---------- Login screen ---------- -->
+<div class="login-screen" id="login-screen">
+  <div class="login-card">
+    <p class="eyebrow">Restricted</p>
+    <h1>Sign in</h1>
+    <form id="login-form">
+      <div class="field">
+        <label for="login-email">Email</label>
+        <input type="email" id="login-email" required autocomplete="username" />
+      </div>
+      <div class="field">
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" required autocomplete="current-password" />
+      </div>
+      <button type="submit" class="btn btn-solid" style="width:100%; justify-content:center;">Sign In</button>
+      <p class="form-error" id="login-error"></p>
+    </form>
+  </div>
+</div>
+
+<!-- ---------- Dashboard (shown once authenticated) ---------- -->
+<div class="admin-shell" id="dashboard-screen" style="display:none;">
+  <div class="wrap">
+    <div class="admin-bar">
+      <p class="who">Signed in as <span id="who-email"></span></p>
+      <div class="admin-actions">
+        <button class="btn btn-solid" id="add-cert-btn">+ Add Certification</button>
+        <button class="btn btn-ghost" id="logout-btn">Sign Out</button>
+      </div>
+    </div>
+
+    <nav class="admin-tabs" id="admin-tabs"></nav>
+
+    <div class="cert-grid" id="admin-grid"></div>
+  </div>
+</div>
+
+<!-- ---------- Add / edit side panel ---------- -->
+<div class="panel-overlay" id="panel-overlay">
+  <aside class="side-panel" role="dialog" aria-modal="true">
+    <div class="side-panel-head">
+      <h2 id="panel-title">Add Certification</h2>
+      <button class="panel-close" id="panel-close" aria-label="Close">✕</button>
+    </div>
+
+    <form id="panel-form">
+      <div class="side-panel-body">
+        <div class="side-panel-preview" id="panel-preview">
+          <span class="placeholder">Image preview appears here</span>
+        </div>
+
+        <div class="field">
+          <label for="f-section">Section</label>
+          <select id="f-section"></select>
+        </div>
+
+        <div class="field">
+          <label for="f-name">Certification name</label>
+          <input type="text" id="f-name" placeholder="e.g. LangGraph Agent Development" required />
+        </div>
+
+        <div class="field">
+          <label for="f-image-url">Image URL</label>
+          <input type="url" id="f-image-url" placeholder="https://..." required />
+          <p class="field-hint">Hosted image link — GitHub raw URL, Google Drive share link, etc.</p>
+        </div>
+
+        <div class="field">
+          <label for="f-description">Description (optional)</label>
+          <textarea id="f-description" placeholder="What this certification covers..."></textarea>
+        </div>
+
+        <div class="field">
+          <label for="f-issuer-link">Issuer / verification link</label>
+          <input type="url" id="f-issuer-link" placeholder="https://..." required />
+        </div>
+
+        <p class="form-error" id="panel-error"></p>
+      </div>
+
+      <div class="side-panel-footer">
+        <button type="button" class="btn btn-danger" id="panel-delete-btn" style="display:none;">Delete</button>
+        <button type="submit" class="btn btn-solid">Save</button>
+      </div>
+    </form>
+  </aside>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script type="module" src="js/admin-page.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Certifications — Omar Nesredin Anwar Hagos</title>
+<meta name="description" content="Certifications and credentials — agentic AI, professional networking, hackathons, AI/ML/DL, coding, and other expertise." />
+
+<link rel="icon" href="assets/gobz-logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/certs.css" />
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <img src="assets/gobz-logo.png" alt="GOBZ" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="certs.html" class="active">Certifications</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="certs-hero">
+  <div class="wrap">
+    <p class="eyebrow">Proof of Work</p>
+    <h1>Certifications &amp; Credentials</h1>
+    <p>Every credential below links back to its issuer for verification. Click any card for details.</p>
+
+    <nav class="section-index" id="section-index" aria-label="Jump to section"></nav>
+  </div>
+</header>
+
+<main id="cert-sections">
+  <!-- Sections + cards are rendered by js/certs-page.js -->
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Omar Nesredin Anwar Hagos</span>
+    <span>GOBZ</span>
+  </div>
+</footer>
+
+<!-- Cert detail modal -->
+<div class="modal-overlay" id="cert-modal" role="dialog" aria-modal="true">
+  <div class="modal-card">
+    <div class="modal-image">
+      <img id="modal-image" src="" alt="" />
+      <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body">
+      <span class="modal-section-tag" id="modal-section-tag"></span>
+      <h3 id="modal-name"></h3>
+      <p class="modal-desc" id="modal-desc"></p>
+      <a href="#" target="_blank" rel="noopener" class="btn btn-solid" id="modal-link">Verify credential ↗</a>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="js/certs-page.js"></script>
+</body>
+</html>
