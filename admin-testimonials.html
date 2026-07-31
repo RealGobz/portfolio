@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="robots" content="noindex, nofollow" />
-<title>Admin — GOBZ</title>
+<title>Admin — Social Proof — GOBZ</title>
 
 <link rel="icon" href="assets/gobz-logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,8 +12,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/style.css" />
-<link rel="stylesheet" href="css/certs.css" />
 <link rel="stylesheet" href="css/admin.css" />
+<link rel="stylesheet" href="css/admin-projects.css" />
 </head>
 <body>
 
@@ -23,8 +23,8 @@
       <img src="assets/gobz-logo.png" alt="GOBZ" /> Admin
     </a>
     <ul class="nav-links">
+      <li><a href="admin.html">Manage Certs</a></li>
       <li><a href="admin-projects.html">Manage Projects</a></li>
-      <li><a href="admin-testimonials.html">Manage Social Proof</a></li>
       <li><a href="index.html">View site ↗</a></li>
     </ul>
   </div>
@@ -56,14 +56,12 @@
     <div class="admin-bar">
       <p class="who">Signed in as <span id="who-email"></span></p>
       <div class="admin-actions">
-        <button class="btn btn-solid" id="add-cert-btn">+ Add Certification</button>
+        <button class="btn btn-solid" id="add-testimonial-btn">+ Add Social Proof</button>
         <button class="btn btn-ghost" id="logout-btn">Sign Out</button>
       </div>
     </div>
 
-    <nav class="admin-tabs" id="admin-tabs"></nav>
-
-    <div class="cert-grid" id="admin-grid"></div>
+    <div class="admin-project-list" id="admin-testimonial-list"></div>
   </div>
 </div>
 
@@ -71,40 +69,37 @@
 <div class="panel-overlay" id="panel-overlay">
   <aside class="side-panel" role="dialog" aria-modal="true">
     <div class="side-panel-head">
-      <h2 id="panel-title">Add Certification</h2>
+      <h2 id="panel-title">Add Social Proof</h2>
       <button class="panel-close" id="panel-close" aria-label="Close">✕</button>
     </div>
 
     <form id="panel-form">
       <div class="side-panel-body">
+        <div class="field">
+          <label for="f-name">Name</label>
+          <input type="text" id="f-name" placeholder="e.g. John Doe" required />
+          <p class="field-hint">The name of the person who said something about you.</p>
+        </div>
+
+        <div class="field">
+          <label for="f-quote">What they said</label>
+          <textarea id="f-quote" placeholder="Their testimonial or recommendation text..." required></textarea>
+        </div>
+
+        <div class="field">
+          <label for="f-link">Proof link</label>
+          <input type="url" id="f-link" placeholder="https://www.linkedin.com/..." required />
+          <p class="field-hint">Link to the original post or recommendation (usually LinkedIn).</p>
+        </div>
+
+        <div class="field">
+          <label for="f-image-url">Screenshot URL (optional)</label>
+          <input type="url" id="f-image-url" placeholder="https://..." />
+          <p class="field-hint">An image of the testimonial if it's a screenshot. Must be already hosted somewhere.</p>
+        </div>
+
         <div class="side-panel-preview" id="panel-preview">
           <span class="placeholder">Image preview appears here</span>
-        </div>
-
-        <div class="field">
-          <label for="f-section">Section</label>
-          <select id="f-section"></select>
-        </div>
-
-        <div class="field">
-          <label for="f-name">Certification name</label>
-          <input type="text" id="f-name" placeholder="e.g. LangGraph Agent Development" required />
-        </div>
-
-        <div class="field">
-          <label for="f-image-url">Image URL</label>
-          <input type="url" id="f-image-url" placeholder="https://..." required />
-          <p class="field-hint">Hosted image link — GitHub raw URL, Google Drive share link, etc.</p>
-        </div>
-
-        <div class="field">
-          <label for="f-description">Description (optional)</label>
-          <textarea id="f-description" placeholder="What this certification covers..."></textarea>
-        </div>
-
-        <div class="field">
-          <label for="f-issuer-link">Issuer / verification link</label>
-          <input type="url" id="f-issuer-link" placeholder="https://..." required />
         </div>
 
         <p class="form-error" id="panel-error"></p>
@@ -120,6 +115,6 @@
 
 <div class="toast" id="toast"></div>
 
-<script type="module" src="js/admin-page.js"></script>
+<script type="module" src="js/admin-testimonials-page.js"></script>
 </body>
 </html>

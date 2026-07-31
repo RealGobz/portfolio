@@ -160,3 +160,155 @@
     align-items: start;
   }
 }
+
+/* --- Social Proof section --- */
+
+.social-proof-section {
+  border-top: 1px solid var(--border);
+  padding: 96px 0;
+  position: relative;
+}
+
+.social-proof-header {
+  margin-bottom: 48px;
+}
+
+.social-proof-header h2 {
+  font-size: clamp(26px, 3.5vw, 36px);
+  margin: 14px 0 16px;
+  color: var(--text);
+}
+
+.social-proof-header p {
+  font-family: var(--font-body);
+  color: var(--text-muted);
+  max-width: 60ch;
+  font-size: 16px;
+}
+
+.social-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 20px;
+}
+
+/* --- Proof card --- */
+
+.proof-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition:
+    border-color var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.proof-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.proof-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0, 209, 224, 0.12);
+}
+
+.proof-card:hover::before {
+  opacity: 1;
+}
+
+.proof-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.proof-card-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  border: 1px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.proof-card-name {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+.proof-card-quote {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin: 0;
+  padding: 0;
+  border: none;
+  flex: 1;
+}
+
+.proof-card-screenshot {
+  margin-top: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-elevated-2);
+}
+
+.proof-card-screenshot img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.proof-card-link {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  transition: color var(--transition);
+}
+
+.proof-card:hover .proof-card-link {
+  color: var(--text);
+}
+
+@media (max-width: 420px) {
+  .social-proof-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

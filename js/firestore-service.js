@@ -118,6 +118,45 @@ export async function deleteProject(id) {
   return deleteDoc(doc(db, PROJECTS_COLLECTION, id));
 }
 
+// ============================================================================
+// Testimonials (Social Proof) — same pattern as projects. Each doc stores a
+// name, quote, proof link (usually LinkedIn), and an optional screenshot URL.
+// ============================================================================
+
+const TESTIMONIALS_COLLECTION = 'testimonials';
+
+/**
+ * Fetch every testimonial, ordered by display order.
+ */
+export async function fetchAllTestimonials() {
+  const snap = await getDocs(collection(db, TESTIMONIALS_COLLECTION));
+  const items = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
+  items.sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+  return items;
+}
+
+/** Add a new testimonial document. */
+export async function addTestimonial({ name, quote, link, imageUrl, order }) {
+  return addDoc(collection(db, TESTIMONIALS_COLLECTION), {
+    name,
+    quote: quote || '',
+    link: link || '',
+    imageUrl: imageUrl || '',
+    order: Number.isFinite(order) ? order : 0,
+    createdAt: serverTimestamp()
+  });
+}
+
+/** Update an existing testimonial document by id. */
+export async function updateTestimonial(id, fields) {
+  return updateDoc(doc(db, TESTIMONIALS_COLLECTION, id), fields);
+}
+
+/** Delete a testimonial document by id. */
+export async function deleteTestimonial(id) {
+  return deleteDoc(doc(db, TESTIMONIALS_COLLECTION, id));
+}
+
 /** Auth helpers */
 export function loginAdmin(email, password) {
   return signInWithEmailAndPassword(auth, email, password);
